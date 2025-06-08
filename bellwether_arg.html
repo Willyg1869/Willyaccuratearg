@@ -1,0 +1,81 @@
+<!-- index.html -->
+<html>
+<head>
+  <title>The Bellwether Signal</title>
+  <style>
+    body {
+      background-color: black;
+      color: #00ff00;
+      font-family: monospace;
+      text-align: center;
+      padding-top: 100px;
+    }
+    input, button {
+      font-size: 1.2em;
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>The Bellwether Signal</h1>
+  <p>Enter the passcode to proceed:</p>
+  <input id="pass" type="text">
+  <button onclick="checkPass()">Enter</button>
+  <script src="script.js"></script>
+</body>
+</html>
+
+<!-- script.js -->
+function checkPass(){
+  if(document.getElementById('pass').value === '2215'){
+    window.location = 'portal1.html';
+  } else {
+    alert('Silence.');
+  }
+}
+// Next clue: Inspect the <small> tag in portal1.html
+
+<!-- portal1.html -->
+<html>
+<head>
+  <title>Channel-1 Transmission</title>
+  <style>
+    body {
+      background-color: black;
+      color: #00ff00;
+      font-family: monospace;
+      text-align: center;
+      padding-top: 50px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Welcome, signal receiver.</h2>
+  <p>The transmission is beginning. Tune carefully.</p>
+  <video src="static_channel01.mp4" width="640" controls></video>
+  <br>
+  <small><!-- .... .- ...- . / -.-- --- ..- / .- ... -.- . -.. / .- -... --- ..- - / - .... . / .-- .... .. ... .--. . .-. ... ..--.. -->
+    The signal lives beneath the noise.
+  </small>
+</body>
+</html>
+
+<!-- Additional asset: static_channel01.mp4 -->
+<!-- This video contains:
+- 5 seconds of static
+- Whispered numbers: "22... 15..." (timestamp clue)
+- 1 frame flash of a pale face with glowing eyes
+- Text: "2215" appears distorted at the end
+--> 
+
+<!-- Additional clue: hidden_image.png -->
+<!-- A PNG image with steganographically encoded message:
+"The watchers are listening. BellwetherSystem://channel2?key=echos"
+--> 
+
+<!-- Setup instructions:
+1. Host these files via GitHub Pages or local server.
+2. Upload the MP4 video and PNG file to the same directory.
+3. Watch the video and decode the Morse in the HTML comment to proceed.
+4. The story continues at: BellwetherSystem://channel2?key=echos (fictional endpoint for expansion).
+-->
